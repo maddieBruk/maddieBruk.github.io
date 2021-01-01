@@ -25,18 +25,16 @@
     <h1>Emotion Detection WebApp</h1>
     <!-- <form id="upload-image" action="load_image()"> -->
     <form id="upload-image">
-        <label for="img">Upload an image</label>
-        <input type="file"  accept="image/*" name="image" id="file"  onchange="load_and_predict(event)">
-        <!-- <input type="file" id="img" name="img" accept="image/*"> -->
-      </form>
+      <label for="img">Upload an image</label>
+      <input type="file"  accept="image/*" name="image" id="file"  onchange="load_and_predict(event)">
+    </form>
 
     <img id="output" width="200" />	
     <input type="submit" value="Clear">
-    <p id="pasteIt"> </p>
+
     <script>
 
     var emotions = ["Angry", "Happy", "Sad", "Surprised", "Neutral"];
-
 
     tf.loadLayersModel('model/model.json').then(function(model) {
       window.model = model;
@@ -70,14 +68,13 @@
             console.log(probs);
             probs.forEach(prob => {
               console.log(emotions[probs.indexOf(prob)], prob);
-              document.innerHtml("pasteIt")+=emotions[probs.indexOf(prob)], prob;
             });
 
           });
         } 
       } else {
         // The model takes a bit to load, if we are too fast, wait
-        setTimeout(function(){predict(input)}, 50);
+        setTimeout(function(){load_and_predict(input)}, 50);
       }
     }
     
