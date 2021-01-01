@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="style.css">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-H0NW5Z2MYC"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-H0NW5Z2MYC');
+    </script>
+
+    <title>Digit Recognition WebApp</title>
+    <meta name="description" content="Simple Machine Learning Model into an WebApp using TensorFlow.js">
+    <meta name="keywords" content="Machine Learning, TensorFlow.js">
+
+  </head>
+
+  <body>
+    <!--<script type="text/javascript" src="http://livejs.com/live.js"></script>-->
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.5.2/dist/tf.min.js"></script>
+    <h1>Emotion Detection WebApp</h1>
+    <!-- <form id="upload-image" action="load_image()"> -->
+    <form id="upload-image">
+        <label for="img">Upload an image</label>
+        <input type="file"  accept="image/*" name="image" id="file"  onchange="load_and_predict(event)">
+        <!-- <input type="file" id="img" name="img" accept="image/*"> -->
+      </form>
+
+    <img id="output" width="200" />	
+    <input type="submit" value="Clear">
+
+    <script>
+
+    tf.loadLayersModel('model/model.json').then(function(model) {
+      window.model = model;
+    });
+
+    // Credits to https://www.webtrickshome.com/faq/how-to-display-uploaded-image-in-html-using-javascript
+    // var loadFile = function(event) {
+    //   var image = document.getElementById('output');
+    //   image.src = URL.createObjectURL(event.target.files[0]);
+    // };
+    var clear = function() {
+      image.src = null;
+    }
+
+    var load_and_predict = function(event) {
+      console.log("hi");
+      var image = document.getElementById('output');
+      image.width = 48;
+      image.height = 48;
+      image.src = URL.createObjectURL(event.target.files[0]);
+
+      // experimental stuff
+      var ctx = image.getContext('2d');
+      var image2 = ctx.getImageData(0, 0, image.height, image.width);
+      var t = tf.browser.fromPixels(image2);
+      // end experimental stuff
+
+      // original code
+      // var t = tf.browser.fromPixels(image);
+      console.log(t);
+
+      // const t = tf.browser.fromPixels(image);
+      if (window.model) {
+        console.log(t);
+        // window.model.predict(t.reshape([1,48,48,3])).array().then(function(probs){
+        //   probs = probs[0];
+        //   console.log(probs);
+        // });
+      }
+        // TODO 
+    //   if (window.model) {
+    //     window.model.predict([tf.tensor(input).reshape([1, 28, 28, 1])]).array().then(function(scores){
+    //       scores = scores[0];
+    //       predicted = scores.indexOf(Math.max(...scores));
+    //       $('#number').html(predicted);
+    //     });
+    //   } else {
+    //     // The model takes a bit to load, if we are too fast, wait
+    //     setTimeout(function(){predict(input)}, 50);
+    //   }
+    }
+    </script>
+
+  </body>
+</html>
