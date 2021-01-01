@@ -68,9 +68,14 @@
           window.model.predict(t.reshape([1,48,48,3])).array().then(function(probs){
             probs = probs[0];
             console.log(probs);
+            document.getElementById("pasteIt").innerHTML="";
             probs.forEach(prob => {
               console.log(emotions[probs.indexOf(prob)], prob);
-              document.innerHtml("pasteIt")+=emotions[probs.indexOf(prob)], prob;
+              document.getElementById("pasteIt").innerHTML+=emotions[probs.indexOf(prob)]+" "+"\n";
+
+              document.getElementById("pasteIt").innerHTML+=prob.toFixed(4)*100+"% \n";
+            
+              
             });
 
           });
