@@ -35,6 +35,9 @@
 
     <script>
 
+    var emotions = ["Angry", "Happy", "Sad", "Surprised", "Neutral"];
+
+
     tf.loadLayersModel('model/model.json').then(function(model) {
       window.model = model;
     });
@@ -50,41 +53,33 @@
 
     var load_and_predict = function(event) {
       console.log("hi");
-      var image = document.getElementById('output');
-      image.width = 48;
-      image.height = 48;
-      image.src = URL.createObjectURL(event.target.files[0]);
-
-      // experimental stuff
-      var ctx = image.getContext('2d');
-      var image2 = ctx.getImageData(0, 0, image.height, image.width);
-      var t = tf.browser.fromPixels(image2);
-      // end experimental stuff
-
-      // original code
-      // var t = tf.browser.fromPixels(image);
-      console.log(t);
-
-      // const t = tf.browser.fromPixels(image);
       if (window.model) {
-        console.log(t);
-        // window.model.predict(t.reshape([1,48,48,3])).array().then(function(probs){
-        //   probs = probs[0];
-        //   console.log(probs);
-        // });
+
+        var image = document.getElementById('output');
+        image.width = 48;
+        image.height = 48;
+        image.src = URL.createObjectURL(event.target.files[0]);
+
+        image.onload = () => {
+          var t = tf.browser.fromPixels(image);
+          t.print();
+          console.log(t);
+          console.log(t);
+          window.model.predict(t.reshape([1,48,48,3])).array().then(function(probs){
+            probs = probs[0];
+            console.log(probs);
+            probs.forEach(prob => {
+              console.log(emotions[probs.indexOf(prob)], prob);
+            });
+
+          });
+        } 
+      } else {
+        // The model takes a bit to load, if we are too fast, wait
+        setTimeout(function(){predict(input)}, 50);
       }
-        // TODO 
-    //   if (window.model) {
-    //     window.model.predict([tf.tensor(input).reshape([1, 28, 28, 1])]).array().then(function(scores){
-    //       scores = scores[0];
-    //       predicted = scores.indexOf(Math.max(...scores));
-    //       $('#number').html(predicted);
-    //     });
-    //   } else {
-    //     // The model takes a bit to load, if we are too fast, wait
-    //     setTimeout(function(){predict(input)}, 50);
-    //   }
     }
+    
     </script>
 
   </body>
