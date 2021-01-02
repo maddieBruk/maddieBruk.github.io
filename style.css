@@ -6,6 +6,7 @@ body {
     margin: 50px;
     font-size: 70px;
     text-align: center;
+    font-family: 'Xanh Mono', monospace;
   }
   #paint {
     border:3px solid red;
@@ -28,4 +29,11 @@ body {
     margin-top: 70px;
     padding: 30px;
     text-align: center;
+  }
+  p {
+    text-align: center;
+    font-family: 'Xanh Mono', monospace;
+  }
+  img{
+    align-content: center;
   }
