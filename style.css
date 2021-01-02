@@ -1,6 +1,7 @@
 body {
     touch-action: none; /*https://developer.mozilla.org/en-US/docs/Web/CSS/touch-action*/
-    font-family: "Roboto";
+    font-family: 'Quicksand', sans-serif;
+    font-family: 'Xanh Mono', monospace;
     margin: 2rem;
     align-content: center;
   }
@@ -41,6 +42,7 @@ body {
   }
   p {
     text-align: center;
+    font-family: 'Quicksand', sans-serif;
     font-family: 'Xanh Mono', monospace;
     justify-content: center;
     margin-top: 20px;
