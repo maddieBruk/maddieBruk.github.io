@@ -1,12 +1,14 @@
 body {
     touch-action: none; /*https://developer.mozilla.org/en-US/docs/Web/CSS/touch-action*/
     font-family: "Roboto";
+    align-content: center;
   }
   h1 {
     margin-top: 20px;
     margin: 50px;
     font-size: 70px;
     text-align: center;
+    font-family: 'Quicksand', sans-serif;
     font-family: 'Xanh Mono', monospace;
     justify-content: center;
   }
@@ -40,6 +42,7 @@ body {
     margin-top: 20px;
   }
   .centerMe{
+    text-align: center;
     align-content: center;
     display: block;
     margin-left:auto ;

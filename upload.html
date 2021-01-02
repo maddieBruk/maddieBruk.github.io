@@ -13,7 +13,8 @@
       gtag('config', 'G-H0NW5Z2MYC');
     </script>
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Xanh+Mono:ital@1&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@700&family=Xanh+Mono:ital@1&display=swap" rel="stylesheet">
     <title> Emotion Detection WebApp</title>
     <meta name="description" content="Simple Machine Learning Model into an WebApp using TensorFlow.js">
     <meta name="keywords" content="Machine Learning, TensorFlow.js">
@@ -26,12 +27,12 @@
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.5.2/dist/tf.min.js"></script>
     <h1>Emotion Detection WebApp</h1>
     <!-- <form id="upload-image" action="load_image()"> -->
-    <form id="upload-image">
+    <form class="centerMe" id="upload-image">
       <label for="img">Upload an image</label>
       <input type="file"  accept="image/*" name="image" id="file"  onchange="load_and_predict(event)">
     </form>
 
-    <img class= "centerMe" id="output" width="200" />	
+    <img class= "centerMe" id="output" />	
     
    <p class="centerMe" id="pasteIt"> </p>
     <script>
