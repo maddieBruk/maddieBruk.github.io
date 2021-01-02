@@ -1,9 +1,10 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
     <link rel="stylesheet" href="style.css">
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-H0NW5Z2MYC"></script>
@@ -32,6 +33,10 @@
       <input type="file"  accept="image/*" name="image" id="file"  onchange="load_and_predict(event)">
     </form>
 
+
+    <div class="label"><p>Original Image:</p></div>
+    <img id="original" width="200" />	
+    <div class="label"><p>Input Image (we resize it to a square, so crop your image to minimize warping):</p></div>
     <img id="output" width="200" />	
     <input type="submit" value="Clear">
     <p id="pasteIt"> </p>
@@ -44,10 +49,6 @@
     });
 
     // Credits to https://www.webtrickshome.com/faq/how-to-display-uploaded-image-in-html-using-javascript
-    // var loadFile = function(event) {
-    //   var image = document.getElementById('output');
-    //   image.src = URL.createObjectURL(event.target.files[0]);
-    // };
     var clear = function() {
       image.src = null;
     }
@@ -61,7 +62,15 @@
         image.height = 48;
         image.src = URL.createObjectURL(event.target.files[0]);
 
+        var large_image = document.getElementById('original');
+        large_image.src = URL.createObjectURL(event.target.files[0]);
+
         image.onload = () => {
+          var labels = document.getElementsByClassName("label");
+          for (i = 0; i < labels.length; i++) {
+            labels[i].style.visibility='visible'; 
+          }
+
           var t = tf.browser.fromPixels(image);
           t.print();
           console.log(t);
@@ -77,7 +86,7 @@
               document.getElementById("pasteIt").innerHTML+=probs[i].toFixed(4)*100+"% \n";
             }
 
-          });
+          });          
         } 
       } else {
         // The model takes a bit to load, if we are too fast, wait

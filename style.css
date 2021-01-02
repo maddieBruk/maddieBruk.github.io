@@ -1,11 +1,22 @@
 body {
     touch-action: none; /*https://developer.mozilla.org/en-US/docs/Web/CSS/touch-action*/
     font-family: "Roboto";
+    margin: 2rem;
   }
   h1 {
     margin: 50px;
     font-size: 70px;
     text-align: center;
+  }
+  img {
+    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    /* width: 50%; */
+  }
+  .label{
+    visibility: hidden;
   }
   #paint {
     border:3px solid red;
