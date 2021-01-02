@@ -34,7 +34,6 @@
     </form>
 
     <img id="output" width="200" />	
-    <input type="submit" value="Clear">
     <p id="pasteIt"> </p>
     <script>
 
@@ -49,9 +48,6 @@
     //   var image = document.getElementById('output');
     //   image.src = URL.createObjectURL(event.target.files[0]);
     // };
-    var clear = function() {
-      image.src = null;
-    }
 
     var load_and_predict = function(event) {
       console.log("hi");

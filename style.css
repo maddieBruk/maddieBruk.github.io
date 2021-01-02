@@ -24,12 +24,7 @@ body {
     text-align: center;
     vertical-align: middle;
   }
-  #clear {
-    margin: auto;
-    margin-top: 70px;
-    padding: 30px;
-    text-align: center;
-  }
+
   p {
     text-align: center;
     font-family: 'Xanh Mono', monospace;
