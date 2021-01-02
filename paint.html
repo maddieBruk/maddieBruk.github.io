@@ -29,18 +29,15 @@
     <div id="predicted">
       Recognized digit
       <div id="number"></div>
-      <button id="clear">Clear</button>
     </div>
     <script>
     var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
     if (isMobile) {
       $('#paint').css({'width': '60%'});
       $('#number').css({'width': '30%', 'font-size': '240px'});
-      $('#clear').css({'font-size': '50px'});
     } else {
       $('#paint').css({'width': '300px'});
       $('#number').css({'width': '150px', 'font-size': '120px'});
-      $('#clear').css({'font-size': '35px'});
     }
 
     var cw = $('#paint').width();
@@ -133,10 +130,7 @@
       }
     }
 
-    $('#clear').click(function(){
-      context.clearRect(0, 0, canvas.width, canvas.height);
-      $('#number').html('');
-    });
+ 
     </script>
   </body>
 </html>
