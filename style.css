@@ -26,13 +26,6 @@ body {
     text-align: center;
     vertical-align: middle;
   }
-  #clear {
-    margin: auto;
-    margin-top: 70px;
-    padding: 30px;
-    text-align: center;
-    justify-content: center;
-  }
   p {
     text-align: center;
     font-family: 'Xanh Mono', monospace;
@@ -45,4 +38,12 @@ body {
   .image{
     align-content: center;
     margin-top: 20px;
+  }
+  .centerMe{
+    align-content: center;
+    display: block;
+    margin-left:auto ;
+    margin-right: auto;
+    width:50%;
+    
   }
