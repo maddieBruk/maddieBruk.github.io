@@ -3,10 +3,12 @@ body {
     font-family: "Roboto";
   }
   h1 {
+    margin-top: 20px;
     margin: 50px;
     font-size: 70px;
     text-align: center;
     font-family: 'Xanh Mono', monospace;
+    justify-content: center;
   }
   #paint {
     border:3px solid red;
@@ -29,11 +31,18 @@ body {
     margin-top: 70px;
     padding: 30px;
     text-align: center;
+    justify-content: center;
   }
   p {
     text-align: center;
     font-family: 'Xanh Mono', monospace;
+    justify-content: center;
+    margin-top: 20px;
   }
   img{
     align-content: center;
+  }
+  .image{
+    align-content: center;
+    margin-top: 20px;
   }
