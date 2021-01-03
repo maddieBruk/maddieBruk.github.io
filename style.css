@@ -28,6 +28,8 @@ body {
   }
   .label{
     visibility: hidden;
+    font-family: 'Quicksand', sans-serif;
+    font-family: 'Xanh Mono', monospace; 
   }
   #paint {
     border:3px solid red;
@@ -37,6 +39,8 @@ body {
     font-size: 60px;
     margin-top: 60px;
     text-align: center;
+    font-family: 'Quicksand', sans-serif;
+    font-family: 'Xanh Mono', monospace; 
   }
   #number {
     border: 3px solid black;
@@ -66,5 +70,11 @@ body {
     margin-left:auto ;
     margin-right: auto;
     width:50%;
+    font-family: 'Quicksand', sans-serif;
+    font-family: 'Xanh Mono', monospace; 
     
+  }
+  .fontChange{
+    font-family: 'Quicksand', sans-serif;
+    font-family: 'Xanh Mono', monospace; 
   }
