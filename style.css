@@ -78,3 +78,21 @@ body {
     font-family: 'Quicksand', sans-serif;
     font-family: 'Xanh Mono', monospace; 
   }
+  .red{
+    color:#f94144;
+  }
+  .orange{
+    color:#f3722c;
+  }
+  .yellow{
+    color:#f9c74f
+  }
+  .green{
+    color:#43aa8b;
+  }
+  .blue{
+    color:#277da1;
+  }
+  .purple{
+    color:#9b5de5;
+  }
