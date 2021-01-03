@@ -26,6 +26,22 @@ body {
     margin-right: auto;
     /* width: 50%; */
   }
+  li {
+    float: left;
+     padding: 14px 16px;
+    text-align: center;
+    text-decoration:none;
+    display: block;
+  text-decoration: underline overline;
+}
+  p {
+    margin: 2rem;
+  }
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
   .label{
     visibility: hidden;
     font-family: 'Open Sans', sans-serif;
