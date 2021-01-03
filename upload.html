@@ -59,22 +59,22 @@
     <!--<script type="text/javascript" src="http://livejs.com/live.js"></script>-->
     <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.5.2/dist/tf.min.js"></script>
-    <h1> <span style="color:#FF0000";>E</span><span style="color:#f3722c";>m</span><span style=" color:#f9c74f";>o</span><span style="color:#43aa8b";>t</span><span style="color:#277da1";>i</span><span style=" color:#9b5de5";>o</span><span style="color:#FF0000";>n</span> Detection WebAPP</h1>
+    <h1 style="color:white;"> <span style="color:#FF0000";>E</span><span style="color:#f3722c";>m</span><span style=" color:#f9c74f";>o</span><span style="color:#43aa8b";>t</span><span style="color:#277da1";>i</span><span style=" color:#9b5de5";>o</span><span style="color:#FF0000";>n</span> Detection WebAPP</h1>
     <!-- <form id="upload-image" action="load_image()"> -->
-    <form class="centerMe" id="upload-image">
-      <label class="fontChange" for="img">Upload an image</label>
-      <input type="file"  accept="image/*" name="image" id="file"  onchange="load_and_predict(event)">
+    <form class="centerMe" id="upload-image" style="color:white;">
+      <label class="fontChange" for="img"style="color:white;">Upload an image</label>
+      <input type="file"  accept="image/*" name="image" id="file" style="color:white;" onchange="load_and_predict(event)">
     </form>
 
 
-    <div class="label"><p>Original Image:</p></div>
+    <div class="label"><p style="color:white;">Original Image:</p></div>
     <img id="original" width="200" />	
-    <div class="label"><p>Input Image (we resize it to a square, so crop your image to minimize warping):</p></div>
+    <div class="label" style="color:white;"><p>Input Image (we resize it to a square, so crop your image to minimize warping):</p></div>
     <img id="output" width="200" />	
-    <p id="pasteIt"> </p>
+    <p id="pasteIt" style="color:white;"> </p>
     <!-- <img class= "centerMe" id="output" />	 -->
     
-   <p class="centerMe" id="pasteIt"> </p>
+   <p class="centerMe" id="pasteIt" style="color:white;"> </p>
     <script>
 
     var emotions = ["Angry", "Happy", "Sad", "Surprised", "Neutral"];
