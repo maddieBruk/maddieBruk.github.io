@@ -51,14 +51,14 @@
     color:#9b5de5;
   }
       </style>
-      <nav>
-        <ul style="list-style-type:none;">
-          <li><a href="upload.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="bios.html">Bios</a></li>
-        </ul>
-        <!-- <body style="background-color:black;"> </body>  -->
-      </nav>
+     <nav>
+      <ul style="list-style-type:none;">
+        <li><a href="upload.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="bios.html">Bios</a></li>
+      </ul>
+      <!-- <body style="background-color:black;"> </body>  -->
+    </nav>
   </head>
 
   <body style="background-color: black; margin: 4rem; color: white; font-size: 1.4rem;">
@@ -85,7 +85,7 @@ Log: ~56%
 Decision Tree:~44%
 
 
-By adding more layers and nodes for the data to cycle through, using trial and error we were able to come upon a set of hidden layers and nodes that effectively worked together. They created our…</p>.
+By adding more layers and nodes for the data to cycle through, using trial and error we were able to come upon a set of hidden layers and nodes that effectively worked together. They created our:</p>.
 <h1>Final Model</h1>
 <p>Our Baseline model (programmed with a k-nearest neighbors design)performed at ~50 %. Human accuracy is around 65%, suggesting that we could do better. We used a transfer learning model that took the weights from ImageNet, training on our data using a 90/10 split. The model uses several convolutional layers to filter information from the euclidean distances between facial nodes and pixel data into channels to decide which features indicate the emotion on the person’s face.</p>
         
