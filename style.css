@@ -4,6 +4,11 @@ body {
     font-family: 'Xanh Mono', monospace;
     margin: 2rem;
     align-content: center;
+    border-style: dashed;
+    border-width: 3px;
+    border-left-width: 10px;
+    border-right-width: 10px;
+    border-color: red;
   }
   h1 {
     margin-top: 20px;
