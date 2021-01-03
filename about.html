@@ -70,14 +70,12 @@
       <p>Our Baseline model (programmed with a k-nearest neighbors design)performed at ~50 %.Human accuracy is around 65 %, suggesting that we could do better. So we did. We used a vgg model, and first trained it 
       </p>
       <p>This project was done as a part of <a href=”https://www.inspiritai.com/”>Inspirit AI</a>, a 10-day intensive course in artificial intelligence. Within 48 hours we were able to  create the site, import our model, and develop this website from scratch. Read on to see what we learned and built!</p>
-
         <h1>Neural Networks</h1>
         <p>During the first week, we learned about neural networks. A neural network is a series of algorithms that tries to recognize underlying relationships in a set of data through a process that mimics the way the human brain operates. Neural networks are based on the concept of the structure and functions of a human brain. A human brain consists of neurons that process and transmit information between themselves.</p>
         <h1>Building Our Model</h1>
-<p>First, we located the facial landmarks on each face (eyes, eyebrows, mouths), and used the distances between each pair of points as inputs into our models.</p>
 
 <h1>Initial Models</h1>
-<p>First, we tried using K-Nearest Neighbors, Logistic Regression, and later Decision Trees, which weren’t very effective (accuracies below). The first models we used were only made of simple layers that weren’t able to analyze the features of the images in detail. 
+<p>First, we located the facial landmarks on each face (eyes, eyebrows, mouths), and used the distances between each pair of points as inputs into our models. The first models we tried included K-Nearest Neighbors, Logistic Regression, and later Decision Trees, which weren’t very effective (accuracies below). The first models we used were only made of simple layers that weren’t able to analyze the features of the images in detail. 
 
 Table of accuracies:
 KNN: ~46%
